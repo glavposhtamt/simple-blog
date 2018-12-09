@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/fonts.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>{{.Title}}</title>
+</head>
+<body>
+    <main>
+        <header>
+            <h1><a href="/">{{ .Title }}</a></h1>
+            <ul>
+                <li><a href="/">Обо мне</a></li>
+            </ul>
+        </header>
+        <section>
+            <article>
+                <h3>
+                    {{ $post := .Post }}
+                    {{ $post.Title }}
+                </h3>
+                <p>{{ $post.Post }}</p>
+
+                <div class="info">
+                    <a href="#">Эзотерика</a>
+                    <span>{{ $post.Date }}</span>
+                </div>
+
+                <form action="/" method="post">
+                    <input type="text" placeholder="Имя" name="name" autofocus="">
+                    <input type="text" placeholder="E-mail" name="email">
+                    <textarea name="comment" rows="10" cols="10" placeholder="Комментарий"></textarea>
+                    <input type="button" value="Отправить">
+                </form>
+            </article>
+
+        </section>
+    </main>
+</body>
+</html>
